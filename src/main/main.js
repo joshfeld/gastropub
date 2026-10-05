@@ -50,6 +50,10 @@ protocol.registerSchemesAsPrivileged([
 
 app.enableSandbox()
 
+// Development runs keep their own data and single-instance lock, so they
+// never touch (or hand off to) an installed copy that is open at the same time.
+if (!app.isPackaged) app.setPath('userData', `${app.getPath('userData')}-dev`)
+
 let mainWindow = null
 let library = null
 let rendererReady = false
