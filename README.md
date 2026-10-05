@@ -25,7 +25,7 @@ Gastropub is a small, local-only desktop reader built with Electron. It opens EP
 
 ## Development
 
-Requires Node.js 20 or newer.
+Requires Node.js 22.13 or newer; Node.js 24 is recommended.
 
 ```bash
 npm install     # also copies the reader libraries into src/renderer/vendor
