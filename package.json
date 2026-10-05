@@ -1,7 +1,7 @@
 {
   "name": "gastropub",
   "productName": "Gastropub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A delicious EPUB and PDF reader for Windows",
   "author": "Josh Feldman",
   "license": "MIT",
