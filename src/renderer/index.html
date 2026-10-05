@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' blob:; img-src 'self' blob: data:; font-src 'self' blob: data:; media-src blob:; connect-src 'self' blob: data:; worker-src 'self'; frame-src blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gastropub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-group">
+      <button id="sidebar-button" class="icon-button" title="Contents (Ctrl+B)" aria-label="Contents" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button id="open-button" title="Open book (Ctrl+O)">Open</button>
+      <div class="popover-anchor">
+        <button id="recent-button" title="Recent books" aria-haspopup="true" aria-expanded="false">Recent</button>
+        <div id="recent-popover" class="popover" hidden>
+          <ul id="recent-menu" class="recent-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="book-title" class="book-title"></div>
+
+    <div class="toolbar-group" id="reading-controls" hidden>
+      <button id="prev-button" class="icon-button" title="Previous page (←)" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <span id="epub-location" class="location"></span>
+      <span id="pdf-location" class="location" hidden>
+        <input id="page-input" type="number" min="1" aria-label="Page number"> / <span id="page-count"></span>
+      </span>
+      <button id="next-button" class="icon-button" title="Next page (→)" aria-label="Next page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <span class="divider"></span>
+      <button id="zoom-out-button" class="icon-button" title="Smaller (Ctrl+-)" aria-label="Smaller">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+      </button>
+      <button id="zoom-label" class="zoom-label" title="Reset size (Ctrl+0)">100%</button>
+      <button id="zoom-in-button" class="icon-button" title="Larger (Ctrl+=)" aria-label="Larger">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>
+      </button>
+    </div>
+
+    <div class="toolbar-group">
+      <label class="theme-picker" title="Theme">
+        <span class="visually-hidden">Theme</span>
+        <select id="theme-select">
+          <option value="light">Light</option>
+          <option value="sepia">Sepia</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents" hidden>
+      <div id="toc" class="toc"></div>
+    </nav>
+    <main id="viewer" class="viewer">
+      <section id="welcome" class="welcome">
+        <h1>Gastropub</h1>
+        <p class="tagline">A delicious EPUB and PDF reader</p>
+        <button id="welcome-open-button" class="primary">Open a book</button>
+        <p class="hint">or drop an EPUB or PDF file anywhere in this window</p>
+        <div id="welcome-recent" hidden>
+          <h2>Recent</h2>
+          <ul id="welcome-recent-list" class="recent-list"></ul>
+        </div>
+      </section>
+      <div id="loading" class="loading" hidden>Opening…</div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="alert" hidden></div>
+</body>
+</html>
