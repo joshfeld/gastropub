@@ -40,6 +40,21 @@ jobs:
       - run: npm test
       - run: npm audit --audit-level=high
 
+      # electron-builder uploads files in parallel; if no release exists yet,
+      # each upload creates its own draft. Creating it first gives them one target.
+      - name: Create draft release
+        shell: bash
+        run: |
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            echo "Release $GITHUB_REF_NAME already exists"
+          else
+            gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
+              --title "${GITHUB_REF_NAME#v}" --generate-notes
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+
       - name: Build and upload to draft release
         run: npm run release
         env:

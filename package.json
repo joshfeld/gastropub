@@ -12,7 +12,7 @@
     "url": "https://github.com/joshfeld/gastropub.git"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.13.0"
   },
   "scripts": {
     "postinstall": "node scripts/copy-vendor.mjs",
@@ -86,11 +86,11 @@
   },
   "devDependencies": {
     "electron": "44.5.1",
-    "electron-builder": "26.15.3",
+    "electron-builder": "26.17.0",
     "foliate-js": "1.0.1",
     "pdfjs-dist": "6.4.299"
   },
   "dependencies": {
-    "electron-updater": "6.8.9"
+    "electron-updater": "6.8.10"
   }
 }
