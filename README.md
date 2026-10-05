@@ -12,13 +12,13 @@ Gastropub is a small, local-only desktop reader built with Electron. It opens EP
 - Reading position saved per book, plus a recent-books list
 - Open files from the toolbar, by drag-and-drop, or with **Open with → Gastropub** in Explorer
 
-## Keyboard shortcuts
+## Keyboard and mouse
 
 | Action | Keys |
 | --- | --- |
 | Open a book | `Ctrl+O` |
 | Close the book | `Ctrl+W` |
-| Next / previous page | `→` / `←` (EPUB also `Space` / `Shift+Space`, `PageDown` / `PageUp`) |
+| Next / previous page | `→` / `←` (EPUB also `Space` / `Shift+Space`, `PageDown` / `PageUp`, and mouse wheel down / up) |
 | Toggle contents | `Ctrl+B` |
 | Larger / smaller / reset | `Ctrl+=` / `Ctrl+-` / `Ctrl+0` |
 | Full screen | `F11` |
