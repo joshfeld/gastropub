@@ -92,5 +92,8 @@
   },
   "dependencies": {
     "electron-updater": "6.8.10"
+  },
+  "overrides": {
+    "global-agent": "4.1.3"
   }
 }
