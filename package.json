@@ -91,7 +91,7 @@
     "pdfjs-dist": "6.4.299"
   },
   "dependencies": {
-    "electron-updater": "6.8.10"
+    "electron-updater": "6.8.11"
   },
   "overrides": {
     "global-agent": "4.1.3"
