@@ -85,7 +85,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "44.7.0",
+    "electron": "44.9.1",
     "electron-builder": "26.17.0",
     "foliate-js": "1.0.1",
     "pdfjs-dist": "6.4.299"
